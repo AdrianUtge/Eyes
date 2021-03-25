@@ -1,5 +1,44 @@
-const faders = document.querySelectorAll(".fade-in");
+const off = document.querySelector('.invisible');
+const P = document.getElementById('pant');
+const T = document.getElementById('tee');
 
+
+const options = {};
+
+
+const observer = new IntersectionObserver(function (
+        entries,
+        observer
+    ) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                P.classList.remove("slideL");
+                T.classList.remove("slideR")
+            } else {
+                console.log(entry);
+                P.classList.add("slideL");
+                T.classList.add("slideR");
+            }
+        });
+    },
+    options);
+
+observer.observe(off);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -31,27 +70,4 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-}
-
-const appearOptions = {
-    threshold: 0,
-    rootMargin: "0px 0px -250px 0px"
-};
-const appearOnScroll = new IntersectionObserver(function (
-        entries,
-        appearOnScroll
-    ) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add("appear");
-                appearOnScroll.unobserve(entry.target);
-            }
-        });
-    },
-    appearOptions);
-
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
+} */
