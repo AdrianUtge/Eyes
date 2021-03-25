@@ -1,31 +1,32 @@
-const off = document.querySelector('.invisible');
-const P = document.getElementById('pant');
-const T = document.getElementById('tee');
+const Tappear = document.querySelector('.teeAppear')
+const tee = document.getElementById("tee")
+const options = {
+    threshold: 0.75
+};
 
 
-const options = {};
 
 
-const observer = new IntersectionObserver(function (
+
+const TappearOb = new IntersectionObserver(function (
         entries,
         observer
     ) {
         entries.forEach(entry => {
             if (!entry.isIntersecting) {
-                P.classList.remove("slideL");
-                T.classList.remove("slideR")
+                console.log("no")
+                tee.classList.add("invisible");
+
             } else {
-                console.log(entry);
-                P.classList.add("slideL");
-                T.classList.add("slideR");
+                console.log("yes")
+                tee.classList.remove("invisible");
+
             }
         });
     },
     options);
 
-observer.observe(off);
-
-
+TappearOb.observe(Tappear);
 
 
 

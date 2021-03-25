@@ -41,6 +41,7 @@ body {
 .invisible {
 
     background-color: red;
+    visibility: hidden;
 }
 
 
@@ -108,15 +109,6 @@ body {
 h1 {
     color: white;
 }
-
-/* .fade-in {
-    opacity: 0;
-    transition: opacity 250ms ease-in;
-}
-
-.fade-in.appear {
-    opacity: 1;
-} */
 
 .wrapper {
     display: grid;
